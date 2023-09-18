@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Jovian Careers | Powered by Express</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Learn about job openings at Jovian and submit your application now"
+        />
+        <meta property="og:title" content="Jovian Careers" />
+        <meta
+            property="og:description"
+            content="Learn about job openings at Jovian and submit your application now"
+        />
+        <meta property="og:image" content="../public/jovian_meta.png" />
+        <link
+            rel="icon"
+            href="../public/jovian_favicon.png"
+            type="image/x-icon"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-expand-md shadow-sm">
+            <div class="container-lg px-4">
+                <a class="navbar-brand" href="/">
+                    <div
+                        id="logo"
+                        class="d-md-none fst-italic fw-bolder bg-dark p-2 text-white rounded"
+                    >SHARP </div>
+                    <div
+                        id="logo-with-text"
+                        class="d-none d-md-inline fst-italic fw-bolder bg-dark p-2 text-white rounded">
+                        SHARP Co
+                    </div>
+                </a>
+                
+            </div>
+        </nav>
+
+        <!--ABOUT SECTION-->
+        <div class="container px-4">
+            <div class="row flex-lg-row-reverse align-items-center g-4 py-4">
+                <div class="col-12 col-lg-6">
+                    <img
+                        src="../team.png"
+                        class="d-block mx-lg-auto img-fluid rounded"
+                        loading="lazy"
+                    />
+                </div>
+                <div class="col-lg-6">
+                    <h1
+                        class="display-4 fw-bold text-body-emphasis lh-1 mb-3 text-center d-lg-none"
+                    >
+                        Work at Sharp Co
+                    </h1>
+                    <h1
+                        class="display-5 fw-bold text-body-emphasis lh-1 mb-3 d-none d-lg-block"
+                    >
+                        Work at Sharp Co
+                    </h1>
+                    <p class="lead">
+                        At Sharp Co, we're on a mission to build the world's most
+                        highly reputed technical university, and we're building
+                        it completely online. We offer several beginner friendly
+                        courses that are taken by 300,000+ registered users.
+                    </p>
+                    <p class="lead">
+                        We will offer in the future 2 industry-focused bootcamps:
+                    </p>
+                    <ol class="lead">
+                        <li>
+                                Full Stack Developer Bootcamp
+                        </li>
+                        <li>
+                                Data Science Bootcamp
+                            </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!--JOBS-->
+        <div class="container px-4 mt-5">
+            <h2 class="text-center mb-4">Job Opportunities</h2>
+
+            <!--JOBS LIST-->
+            <div class="d-md-none">
+                {{#jobs}}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="/jobs/{{ id }}">{{ title }}</a>
+                        </h5>
+                        <h6 class="card-subtitle my-1 text-body-secondary">
+                            {{ location }} • {{ salary }}
+                        </h6>
+                        <small class="card-text text-body-secondary">
+                            Posted {{ posted }}
+                        </small>
+                    </div>
+                </div>
+                {{/jobs}}
+            </div>
+
+            <!--JOBS TABLE-->
+            <div class="offset-lg-2 col-lg-8">
+                <table
+                    class="d-none d-md-table table table-striped table-bordered"
+                >
+                    <tr class="table-dark text-center">
+                        <th>Job Title</th>
+                        <th>Location</th>
+                        <th>Salary</th>
+                        <th>Posted On</th>
+                    </tr>
+
+                    {{#jobs}}
+                    <tr>
+                        <td>
+                            <a href="/jobs/{{ id }}">{{ title }}</a>
+                        </td>
+                        <td>{{ location }}</td>
+                        <td>{{ salary }}</td>
+                        <td>{{ posted }}</td>
+                    </tr>
+                    {{/jobs}}
+                </table>
+            </div>
+        </div>
+
+        <!--FOOTER-->
+        <div class="container">
+            <footer class="pt-3 my-4">
+                <p class="text-center border-top text-body-secondary pt-3">
+                    © 2023 Sharp Co | All rights reserved.
+                </p>
+            </footer>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+:root {
+    --bs-font-sans-serif: "Roboto", sans-serif;
+    --bs-blue: #2067F5;
+    --bs-primary: #2067F5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+}
